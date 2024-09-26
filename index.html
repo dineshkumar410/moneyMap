@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Money Map - An Expense Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="heading">Money Map</h1>
+      <div class="summary">
+        <div>
+          <h3>Total Income</h3>
+          <p id="total-income">₹0.00</p>
+        </div>
+        <div>
+          <h3>Total Expenses</h3>
+          <p id="total-expenses">₹0.00</p>
+        </div>
+        <div>
+          <h3>Net Balance</h3>
+          <p id="net-balance">₹0.00</p>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3 class="secondary-heading">Add Transaction</h3>
+        <form id="transaction-form">
+          <input
+            type="text"
+            id="description"
+            placeholder="Description"
+            required
+          />
+          <input type="number" min="0" id="amount" placeholder="Amount" required />
+          <div class="form-radio">
+            <div>
+              <input
+                type="radio"
+                id="income"
+                name="type"
+                value="income"
+                checked
+              />
+              <label for="income">Income</label>
+            </div>
+            <div>
+              <input type="radio" id="expense" name="type" value="expense" />
+              <label for="expense">Expense</label>
+            </div>
+          </div>
+          <button type="submit">Add Transaction</button>
+        </form>
+      </div>
+
+      <div class="filter-section">
+        <h3 class="secondary-heading">Filter</h3>
+        <div class="form-radio">
+          <div>
+            <input
+              type="radio"
+              id="filter-all"
+              name="filter"
+              value="all"
+              checked
+            />
+            <label for="filter-all">All</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              id="filter-income"
+              name="filter"
+              value="income"
+            />
+            <label for="filter-income">Income</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              id="filter-expense"
+              name="filter"
+              value="expense"
+            />
+            <label for="filter-expense">Expense</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="list-section">
+        <h3 class="secondary-heading">Transaction List</h3>
+        <ul id="transaction-list"></ul>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
